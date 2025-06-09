@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "45718487-e30e9728-bc2f-4edf-a7c4-9fa75f53f194",
+		"name": "Swagger Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Single Book Details",
+			"id": "45718487-d49cb146-4ea7-45ea-9e7c-3288c07ad166",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bookstore.demoqa.com/Bookstore/v1/Book?ISBN=9781449325862",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Bookstore",
+						"v1",
+						"Book"
+					],
+					"query": [
+						{
+							"key": "ISBN",
+							"value": "9781449325862"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books Details",
+			"id": "45718487-fcd5a573-1917-4564-8740-4ae50285c7b6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bookstore.demoqa.com/Bookstore/v1/Books",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Bookstore",
+						"v1",
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"id": "45718487-78359c71-4709-434e-a4c4-d940ce17ea24",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"saumit2\",\n  \"password\": \"Ssc@1997\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore.demoqa.com/Account/v1/User",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate User Token",
+			"id": "45718487-29ee99f6-c4bd-440b-bd0e-b23954510f2a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"saumit2\",\n  \"password\": \"Ssc@1997\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore.demoqa.com/Account/v1/GenerateToken",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"GenerateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Book to an User",
+			"id": "45718487-11532a86-802d-4181-9c7c-6a7ffde861d0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InNhdW1pdDIiLCJwYXNzd29yZCI6IlNzY0AxOTk3IiwiaWF0IjoxNzQ5NDMzOTIyfQ.E24iFrmb9s0VLnL2WLLFCnif0Ice15Y1smYscojgMfY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"d0e0bab8-192a-4cbe-bc86-b5a47841968b\",\n  \"collectionOfIsbns\": [\n    {\n      \"isbn\": \"9781449331818\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore.demoqa.com/BookStore/v1/Books",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Path Parameter User",
+			"id": "45718487-c3253301-48de-4cff-a318-301535552be6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InNhdW1pdDIiLCJwYXNzd29yZCI6IlNzY0AxOTk3IiwiaWF0IjoxNzQ5NDMzOTIyfQ.E24iFrmb9s0VLnL2WLLFCnif0Ice15Y1smYscojgMfY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"d0e0bab8-192a-4cbe-bc86-b5a47841968b\",\n  \"collectionOfIsbns\": [\n    {\n      \"isbn\": \"9781449331818\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://bookstore.demoqa.com/Account/v1/User/:userID",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User",
+						":userID"
+					],
+					"variable": [
+						{
+							"key": "userID",
+							"value": "d0e0bab8-192a-4cbe-bc86-b5a47841968b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
